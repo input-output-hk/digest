@@ -13,6 +13,11 @@ description:     This package provides efficient hash implementations for
 stability:       provisional
 build-type:      Simple
 cabal-version:   >= 1.10
+tested-with:
+    GHC==8.10.7
+  , GHC==9.0.2
+  , GHC==9.2.5
+  , GHC==9.4.3
 
 extra-source-files:
   testing/trivial-reference.c
