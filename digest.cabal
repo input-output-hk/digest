@@ -1,5 +1,5 @@
 name:            digest
-version:         0.0.1.4
+version:         0.0.1.5
 copyright:       (c) 2009 Eugene Kirpichov
 license:         BSD2
 license-file:    LICENSE
@@ -23,6 +23,7 @@ extra-source-files:
   testing/trivial-reference.c
   testing/trivial.expected
   testing/trivial.hs
+  CHANGELOG.md
 
 source-repository head
   type: git
