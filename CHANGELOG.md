@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.1.6 — 5th March 2023
+
+- Introduce 'pkg-config' cabal flag (Thanks to @jonathanlking): <https://github.com/TeofilC/digest/pull/11>
+
 ## 0.0.1.5 — 24th Jan 2023
 
 - Correct license field in .cabal file (Thanks to @juhp): <https://github.com/TeofilC/digest/pull/9>
