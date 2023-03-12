@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.1.7 — 5th March 2023
+
+- Don't use 'pkg-config' to locate zlib on FreeBSD (Thanks to @arrowd): <https://github.com/TeofilC/digest/pull/13>
+
 ## 0.0.1.6 — 5th March 2023
 
 - Introduce 'pkg-config' cabal flag (Thanks to @jonathanlking): <https://github.com/TeofilC/digest/pull/11>
