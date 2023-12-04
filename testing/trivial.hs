@@ -1,5 +1,6 @@
 import Data.Digest.Adler32
 import Data.Digest.CRC32
+import Data.Digest.CRC32C
 
 import Control.Monad            (forM_)
 import Data.ByteString          (ByteString)
@@ -50,3 +51,9 @@ main = do
     runTest "crc32Update 1"             $ crc32Update 1
     runTest "crc32Update 123"           $ crc32Update 123
     runTest "crc32Update 0xFFFFFFFF"    $ crc32Update 0xFFFFFFFF
+
+    runTest "crc32c"                     $ crc32c
+    runTest "crc32cUpdate 0"             $ crc32cUpdate 0
+    runTest "crc32cUpdate 1"             $ crc32cUpdate 1
+    runTest "crc32cUpdate 123"           $ crc32cUpdate 123
+    runTest "crc32cUpdate 0xFFFFFFFF"    $ crc32cUpdate 0xFFFFFFFF
