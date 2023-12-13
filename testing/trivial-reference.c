@@ -1,5 +1,13 @@
+/**
+ * Build:
+ *
+ * gcc -I./testing -I. -I./include -Iexternal/crc32c/include \
+ *      testing/trivial-reference.c external/crc32c/src/crc32c.cc \
+ *      external/crc32c/src/crc32c_portable.cc -lz
+ */
 #include <stdio.h>
 #include <zlib.h>
+#include "crc32c/crc32c.h"
 
 typedef uLong HashFunc(uLong seed, const Bytef *buf, uInt len);
 
@@ -44,6 +52,12 @@ int main(void)
     runTest("crc32Update 1",            crc32, 1);
     runTest("crc32Update 123",          crc32, 123);
     runTest("crc32Update 0xFFFFFFFF",   crc32, 0xFFFFFFFF);
+
+    runTest("crc32c",                   crc32c_extend, 0);
+    runTest("crc32cUpdate 0",           crc32c_extend, 0);
+    runTest("crc32cUpdate 1",           crc32c_extend, 1);
+    runTest("crc32cUpdate 123",         crc32c_extend, 123);
+    runTest("crc32cUpdate 0xFFFFFFFF",  crc32c_extend, 0xFFFFFFFF);
 
     return 0;
 }
