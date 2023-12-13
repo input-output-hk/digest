@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.2.0 — 13th December 2023
+- Add CRC32C (Thanks to @4eUep): <https://github.com/TeofilC/digest/pull/18>
+- Support latest GHC versions: <https://github.com/TeofilC/digest/pull/19>
+
 ## 0.0.1.7 — 5th March 2023
 
 - Don't use 'pkg-config' to locate zlib on FreeBSD (Thanks to @arrowd): <https://github.com/TeofilC/digest/pull/13>

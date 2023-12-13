@@ -1,7 +1,6 @@
 cabal-version:      2.4
 name:               digest
-version:            0.0.1.7
-x-revision:         1
+version:            0.0.2.0
 copyright:          (c) 2009 Eugene Kirpichov
 license:            BSD-2-Clause
 license-file:       LICENSE
@@ -16,7 +15,7 @@ description:
 
 stability:          provisional
 build-type:         Simple
-tested-with:        GHC ==8.10.7 || ==9.0.2 || ==9.2.5 || ==9.4.3
+tested-with:        GHC ==8.10.7 || ==9.0.2 || ==9.2.8 || ==9.4.8 || ==9.6.3 || ==9.8.1
 extra-source-files:
   CHANGELOG.md
   external/crc32c/include/crc32c/crc32c.h
