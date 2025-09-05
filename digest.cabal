@@ -1,6 +1,6 @@
 cabal-version:      2.4
 name:               digest
-version:            0.0.2.1
+version:            0.0.2.1.0.0.0.1
 copyright:          (c) 2009 Eugene Kirpichov
 license:            BSD-2-Clause
 license-file:       LICENSE
@@ -36,6 +36,14 @@ source-repository head
   location: https://github.com/TeofilC/digest
 
 library
+  -- This patched version of the digest depends on crc32c, but we only need this
+  -- for cross-compilation to Windows via Haskell.nix. See
+  -- https://github.com/TeofilC/digest/pull/24.
+  --
+  -- We include this conditional to force Linux to keep using the Hackage version.
+  if !os(windows)
+    buildable: False
+
   exposed-modules:
     Data.Digest.Adler32
     Data.Digest.CRC32
@@ -50,7 +58,7 @@ library
   build-depends:
     , base        >=4.12 && <5
     , bytestring  >=0.10 && <0.13
-    , crc32c    
+    , crc32c
 
   includes:           zlib.h
 
