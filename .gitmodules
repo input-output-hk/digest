@@ -1,3 +1,0 @@
-[submodule "external/crc32c"]
-	path = external/crc32c
-	url = https://github.com/google/crc32c.git

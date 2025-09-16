@@ -1,13 +1,12 @@
 import Data.Digest.Adler32
 import Data.Digest.CRC32
-import Data.Digest.CRC32C
 
-import Control.Monad            (forM_)
-import Data.ByteString          (ByteString)
-import Data.ByteString.Char8    (pack)
-import Data.Word                (Word32)
-import Foreign.ForeignPtr       (mallocForeignPtr)
-import System.IO.Unsafe         (unsafePerformIO)
+import Control.Monad (forM_)
+import Data.ByteString (ByteString)
+import Data.ByteString.Char8 (pack)
+import Data.Word (Word32)
+import Foreign.ForeignPtr (mallocForeignPtr)
+import System.IO.Unsafe (unsafePerformIO)
 
 import qualified Data.ByteString.Internal as I
 
@@ -28,7 +27,7 @@ testStrings =
     , pack "\0"
     , pack "a"
     , pack "hello"
-    , pack ['\0'..'\255']
+    , pack ['\0' .. '\255']
     ]
 
 runTest :: String -> (ByteString -> Word32) -> IO ()
@@ -40,20 +39,14 @@ runTest label func = do
 
 main :: IO ()
 main = do
-    runTest "adler32"                   $ adler32
-    runTest "adler32Update 0"           $ adler32Update 0
-    runTest "adler32Update 1"           $ adler32Update 1
-    runTest "adler32Update 123"         $ adler32Update 123
-    runTest "adler32Update 0xFFF0FFF0"  $ adler32Update 0xFFF0FFF0
+    runTest "adler32" $ adler32
+    runTest "adler32Update 0" $ adler32Update 0
+    runTest "adler32Update 1" $ adler32Update 1
+    runTest "adler32Update 123" $ adler32Update 123
+    runTest "adler32Update 0xFFF0FFF0" $ adler32Update 0xFFF0FFF0
 
-    runTest "crc32"                     $ crc32
-    runTest "crc32Update 0"             $ crc32Update 0
-    runTest "crc32Update 1"             $ crc32Update 1
-    runTest "crc32Update 123"           $ crc32Update 123
-    runTest "crc32Update 0xFFFFFFFF"    $ crc32Update 0xFFFFFFFF
-
-    runTest "crc32c"                     $ crc32c
-    runTest "crc32cUpdate 0"             $ crc32cUpdate 0
-    runTest "crc32cUpdate 1"             $ crc32cUpdate 1
-    runTest "crc32cUpdate 123"           $ crc32cUpdate 123
-    runTest "crc32cUpdate 0xFFFFFFFF"    $ crc32cUpdate 0xFFFFFFFF
+    runTest "crc32" $ crc32
+    runTest "crc32Update 0" $ crc32Update 0
+    runTest "crc32Update 1" $ crc32Update 1
+    runTest "crc32Update 123" $ crc32Update 123
+    runTest "crc32Update 0xFFFFFFFF" $ crc32Update 0xFFFFFFFF
